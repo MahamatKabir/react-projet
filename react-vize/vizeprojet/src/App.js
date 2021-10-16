@@ -7,6 +7,7 @@ import SignIn from './components/auth/SignIn';
 import SignOut from './components/auth/SignOut';
 import CreateProject from './components/projets/CreateProject';
 import './App.css';
+import './index.css';
 
 class App extends Component {
     render() {
@@ -20,8 +21,8 @@ class App extends Component {
                         <Route exact path='/' component={Dashboard} />
                         <Route path='/project/:id' component={ProjectDetails} />
                         <Route path='/signin' component={SignIn} />
-                        <Route path='/signOut' component={SignOut} />
-                        <Route path='/createproject' component={CreateProject} />
+                        <Route path='/signout' component={SignOut} />
+                        <Route path='/create' component={CreateProject} />
                     </Switch>   
                 </div>
             </BrowserRouter>

@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 
 class CreateProject extends Component {
     state={
-        başlik: "",
-        içerik: ""
+        baslik: "",
+        icerik: ""
     }
 
     handleChange = (e) => {
