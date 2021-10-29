@@ -13,7 +13,7 @@ function App() {
         <br /><br /><br />
         <Switch>
           <Route exact path="/" component={ProductListing} />
-          <Route path="/product/:productId" component={ProductDetails} />
+          <Route path="/products/:productId" component={ProductDetails} />
           <Route>404 Not Found!</Route>
         </Switch>
       </Router>
