@@ -4,11 +4,15 @@ export const createProject =(project) => {
 
         const firestore = getFirestore();
 
+        const profile=getState().firebase.profile;
+        const yazarId=getState().firebase.auth.uid;
+
+
         firestore.collection('projects').add({
             ...project,
-            isim: 'karibou',
-            soyisim:'software',
-            yazarId: 12345,
+            isim: profile.isim,
+            soyisim:profile.soyisim,
+            yazarId: yazarId,
             olusturulmaTarihi: new Date(),
 
         }).then(()=>{
