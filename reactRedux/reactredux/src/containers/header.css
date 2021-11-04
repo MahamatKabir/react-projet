@@ -1,0 +1,23 @@
+.ui-menu {
+    background-color: rgb(75, 71, 63);
+    color: rgb(250, 249, 249);
+}
+
+.navbar-container{
+    background-color:darkgray;
+    display:inline-flex;
+    justify-content: space-between;
+    width: 100%; 
+    
+    
+}
+.ui-grid-container{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  -ms-layout-grid-type: loose;
+  background-color: #2196F3;
+  padding: 1px;
+
+    
+}

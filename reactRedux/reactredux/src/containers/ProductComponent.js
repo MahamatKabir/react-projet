@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import "./header.css";
 
 const ProductComponent = () => {
     const products = useSelector((state) => state.allProducts.products);
@@ -12,7 +13,7 @@ const ProductComponent = () => {
                 <div className="ui link cards">
                     <div className="card">
                         <div className="image">
-                            <img src={image} alt={title} />
+                            <img  src={image} alt={title} width="20px" height="20px" />
                         </div>
                         <div className="content">
                              <div className="header">{title}</div>
