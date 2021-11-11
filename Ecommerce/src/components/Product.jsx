@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Link} from "react-router-dom";
 import  {AiOutlineSearch,AiOutlineShoppingCart}  from  "react-icons/ai";
+import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@material-ui/icons';
 
 
 const Info = styled.div`
@@ -72,13 +74,15 @@ cursor: pointer;
             <Image src={item.img} />
             <Info>
                 <Icon>
-                    <AiOutlineSearch/>
+                    <ShoppingCartOutlined/>
                 </Icon>
                 <Icon>
-                    <AiOutlineShoppingCart/>
+                    <Link to={`/product/${item._id}`}>
+                    <SearchOutlined/>
+                    </Link>
                 </Icon>
-                <Icon>
-                <AiOutlineShoppingCart/>
+                <Icon> 
+                <FavoriteBorderOutlined/>
                 </Icon>
             </Info>
         </Container>

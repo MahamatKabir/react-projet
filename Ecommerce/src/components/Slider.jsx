@@ -12,6 +12,7 @@ display:flex;
 width:100%;
 position:relative;
 overflow:hidden;
+top:-100px;
 `
 const Arrow = styled.div`
 width:100px;
