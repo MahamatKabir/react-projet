@@ -90,8 +90,8 @@ export const Slider = () => {
     return (
         <Container>
             
-            <Arrow direction="left" onClick={()=>handleClick("left")}>
-                  <BsFillArrowLeftSquareFill style={{color: 'white'}} />
+            <Arrow direction="left" style={{fontSize:"50px"}} onClick={()=>handleClick("left")}>
+                  <BsFillArrowLeftSquareFill style={{color: "#6931c2"}} />
              </Arrow>
              <Wrapper slideIndex={slideIndex} >
                  {sliderItems.map((item)=>
@@ -110,8 +110,8 @@ export const Slider = () => {
                  )}
                  
              </Wrapper>
-             <Arrow direction="right" onClick={()=>handleClick("right")}>
-                  <BsFillArrowRightSquareFill />
+             <Arrow direction="right" style={{fontSize:"50px"}} onClick={()=>handleClick("right")}>
+                  <BsFillArrowRightSquareFill style={{color: "#6931c2"}}/>
             </Arrow>
         </Container>
     )

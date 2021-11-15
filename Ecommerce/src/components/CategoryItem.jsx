@@ -5,13 +5,15 @@ import {Link} from 'react-router-dom';
 const Container = styled.div`
 flex:1;
 margin: 3px;
-height:70vh;
+height:80vh;
 position: relative;
+
 
 `
 const Image = styled.img`
-width:100%;
-height:100%;
+width:90%;
+height:90%;
+border-radius:10%;
 object-fit:cover;
 
 
@@ -32,14 +34,26 @@ justify-content:center;
 const Title = styled.h1`
 color:white;
 margin-bottom:20px;
+letter-spacing:5px;
 `
 const Button = styled.button`
 border:none;
 padding:10px;
-background-color:white;
-color:gray;
+background-color:#6931c2;
+color:white;
+font-weight:border;
+width:200px;
+height:50px;
+font-size:20px;
+border-radius:5%;
+
 cursor:pointer;
-font-weight:600;
+transition:  all 0.5s ease;
+
+&:hover{
+    transform:scale(1);
+}
+
 `
 
 const CategoryItem = ({item}) => {
