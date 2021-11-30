@@ -27,19 +27,11 @@ const NavbarSecond = () => {
     <div >
       <div className="topnav-container">
         <div className="topnav" id="myTopnav">
-          <a href="#home" className="activie">Home</a>
-          <Link to="/galeri">Kadin</Link>
-          <a href="#contact">Erkek</a>
-          <div class="dropdown">
-            <button class="dropbtn">Çocuk
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-            </div>
-          </div>
+          <a href="/" className="activie">Home</a>
+          <Link to="/products/kadin">Kadin</Link>
+          <Link to="/products/erkek">Erkek</Link>
+          <Link to="/products/cocuk">Çocuk</Link>
+          
           <a href="#about">Iletişim</a>
           <a href="javascript:void(0);" className="icon" onClick={myFunction}>
             <i className="fa fa-bars"></i> </a>

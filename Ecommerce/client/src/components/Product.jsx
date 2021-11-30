@@ -46,8 +46,24 @@ position: absolute;
 
 `
 const Image = styled.img`
-height:100%;
+height:60%;
+width:60%;
 z-index:2;
+display: flex;
+justify-content: center;
+
+
+`
+const Price = styled.h1`
+position:relative;
+bottom:-150px;
+font-size:40px;
+right:200px;
+display: flex;
+align-items: center;
+text-align: center;
+z-index:100;
+font-weight:bold;
 
 `
 
@@ -74,6 +90,7 @@ cursor: pointer;
         <Container>
             <Circle/>
             <Image src={item.img} />
+            
             <Info>
                 <Icon>
                     <ShoppingCartOutlined/>
@@ -86,7 +103,10 @@ cursor: pointer;
                 <Icon> 
                 <FavoriteBorderOutlined/>
                 </Icon>
+                
             </Info>
+            <Price>{item.price}TL</Price>
+            
         </Container>
     )
 }

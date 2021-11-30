@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import NavbarSecond from "../components/NavbarSecond";
 import { mobile } from "../responsive";
 import {useSelector} from "react-redux";
 import{useState,useEffect,} from "react";
@@ -187,7 +188,9 @@ const Cart = () => {
            tokenId: stripeToken.id,
            amount: 500,
          });
-          history.push("/success", {data:res.data});
+          history.push("/success", {
+            stripeData:res.data,
+            products: cart,});
        }catch{}
    };
    stripeToken && makeRequest();
@@ -198,6 +201,7 @@ const Cart = () => {
     <Container>
       <Announcement />
       <Navbar />
+      <NavbarSecond/>
       
       <Wrapper>
         <Title>YOUR BAG</Title>

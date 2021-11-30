@@ -10,6 +10,7 @@ import{useEffect,useState} from "react";
 import {publicRequest} from "../requestMethods";
 import {addProduct} from "../redux/cartRedux";
 import {useDispatch} from "react-redux";
+import NavbarSecond from "../components/NavbarSecond";
 
 
 
@@ -201,8 +202,10 @@ const Product = () => {
 
   return (
     <Container>
+       <Announcement />
       <Navbar />
-      <Announcement />
+      <NavbarSecond/>
+     
       <Wrapper>
         <ImgContainer>
           <Image src={product.img} />

@@ -72,7 +72,7 @@ color:red;
 
 const Login = () => {
   const [username,setUsername] = useState("");
-  const [password,setpassword] = useState("");
+  const [password,setPassword] = useState("");
   const dispatch = useDispatch();
   const {isFetching,error} = useSelector((state) => state.user);
 
@@ -94,7 +94,7 @@ const Login = () => {
           <Input
             placeholder="password"
             type="password"
-            onChange={(e) =>setpassword(e.target.value)}
+            onChange={(e) =>setPassword(e.target.value)}
             
           />
           <Button onClick={handleClick} disabled={isFetching}>
