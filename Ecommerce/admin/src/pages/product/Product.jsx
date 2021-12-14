@@ -67,7 +67,7 @@ export default function Product() {
           <Chart data={pStats} dataKey="Sales" title="Sales Performance" />
         </div>
         <div className="productTopRight">
-          <div className="productInfoTop">
+          <div className="productInfoTop"> 
             <img src={product.img} alt="" className="productInfoImg" />
             <span className="productName">{product.title}</span>
           </div>

@@ -1,15 +1,19 @@
-import { Add, Remove } from "@material-ui/icons";
+import { Add, Remove,DeleteIcon, DeleteOutline, DeleteForever, DeleteRounded } from "@material-ui/icons";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import NavbarSecond from "../components/NavbarSecond";
 import { mobile } from "../responsive";
-import {useSelector} from "react-redux";
+import {useDispatch,useSelector} from "react-redux";
 import{useState,useEffect,} from "react";
 import StripeCheckout from "react-stripe-checkout";
 import { userRequest } from "../requestMethods";
 import { useHistory } from "react-router";
+import { deleteProduct} from "../redux/apiCalls";
+import {useCart} from "react-use-cart"
+
+
 
 const KEY = process.env.REACT_APP_STRIPE;
 
@@ -75,6 +79,11 @@ const Product = styled.div`
   display: flex;
   justify-content: space-between;
   ${mobile({ flexDirection: "column" })}
+  border-bottom: 1px solid black;
+  box-shadow: 4px 8px 7px -5px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 4px 8px 7px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 8px 7px -5px rgba(0,0,0,0.75);
+
 `;
 
 const ProductDetail = styled.div`
@@ -84,6 +93,7 @@ const ProductDetail = styled.div`
 
 const Image = styled.img`
   width: 200px;
+  
 `;
 
 const Details = styled.div`
@@ -112,6 +122,7 @@ const PriceDetail = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
 `;
 
 const ProductAmountContainer = styled.div`
@@ -165,14 +176,15 @@ const SummaryItemText = styled.span``;
 const SummaryItemPrice = styled.span``;
 
 const Button = styled.button`
-  width: 100%;
-  padding: 10px;
-  background-color: black;
-  color: white;
+ 
+  padding: 5px;
+  color: black;
   font-weight: 600;
 `;
 
 const Cart = () => {
+  
+  const dispatch = useDispatch();
  const cart = useSelector(state => state.cart);
  const [stripeToken,setStripeToken] = useState(null);
  const history = useHistory();
@@ -190,12 +202,19 @@ const Cart = () => {
          });
           history.push("/success", {
             stripeData:res.data,
-            products: cart,});
+            products: cart});
        }catch{}
    };
    stripeToken && makeRequest();
    
  },[stripeToken,cart.total,history]);
+ 
+ const handleDelete = (id) => {
+  
+     deleteProduct(id, dispatch);
+   
+  
+};
 
   return (
     <Container>
@@ -233,6 +252,9 @@ const Cart = () => {
                   </Details>
                 </ProductDetail>
                 <PriceDetail>
+                <ProductPrice>
+                    {product.price} TL
+                  </ProductPrice>
                   <ProductAmountContainer>
                     <Add />
                     <ProductAmount>{product.quantity}</ProductAmount>
@@ -241,6 +263,10 @@ const Cart = () => {
                   <ProductPrice>
                     {product.price * product.quantity} TL
                   </ProductPrice>
+                  <DeleteOutline
+                    className="productListDelete"
+                    onClick={() => handleDelete(product.id)}
+                />
                 </PriceDetail>
               </Product>
            ))}

@@ -19,7 +19,7 @@ const Container = styled.div``;
 const Wrapper = styled.div`
   padding: 50px;
   display: flex;
-  background-color:#6931c2;
+  color:black
   opacity:0.8;
 
   ${mobile({ padding: "10px", flexDirection: "column" })}
@@ -32,7 +32,6 @@ const ImgContainer = styled.div`
 const Image = styled.img`
   width: 90%;
   height: 70vh;
-  border-radius:50%;
   object-fit: cover;
   ${mobile({ height: "40vh" })}
 `;
@@ -40,7 +39,7 @@ const Image = styled.img`
 const InfoContainer = styled.div`
   flex: 1;
   padding: 0px 50px;
-  color: white;
+  color: black;
   ${mobile({ padding: "10px" })}
 `;
 
@@ -59,7 +58,7 @@ const Desc = styled.p`
 const Price = styled.span`
   font-weight: 600;
   font-size: 40px;
-  color:white;
+  color:black;
   letter-spacing:5px; 
 `;
 
@@ -163,7 +162,7 @@ const Hr = styled.hr`
 
   margin-top: 20px;
   border-raduis:50%;
-  border:10px double white
+  border:10px double black;
   
 `;
 
@@ -205,16 +204,16 @@ const Product = () => {
        <Announcement />
       <Navbar />
       <NavbarSecond/>
-     
-      <Wrapper>
+     <Wrapper>
         <ImgContainer>
           <Image src={product.img} />
         </ImgContainer>
         <InfoContainer>
           <Title>{product.title}</Title>
           <Desc>{product.desc}</Desc>
+          <Hr/>
           <Price>{product.price} TL</Price>
-          <Hr />
+          <Hr/>
           <FilterContainer>
             <Filter>
               <FilterTitle>Renk</FilterTitle>
@@ -239,7 +238,6 @@ const Product = () => {
               <Add onClick={() => handleQuantity("inc")}/>
             </AmountContainer>
             <Button onClick={handleClick}>SEPETE EKLE</Button>
-            <Buttone onClick={handleClick}>HEMEN AL</Buttone>
           </AddContainer>
         </InfoContainer>
       </Wrapper>

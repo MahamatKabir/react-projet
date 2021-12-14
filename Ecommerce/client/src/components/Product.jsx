@@ -7,16 +7,19 @@ import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@m
 
 const Info = styled.div`
 opacity:0;
-width:100%;
-height:100%;
+width:90%;
+height:90%;
 position:absolute;
-top:0;
-left:0;
-background-color:rgba(0,0,0,0.2);
+top:20px;
+left:-15px;
+background-color:rgba(0,0,0,0.1);
 z-index:3;
 display:flex;
 align-items:center;
 justify-content:center;
+border-radius:50%;
+border:1px solid #6931c2;
+
 
 `
 
@@ -28,9 +31,8 @@ const Container = styled.div`
  display:flex;
  align-items:center;
  justify-content:center;
- background-color: #efebf5;
- background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d9d0e8' fill-opacity='0.4'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    
+ background-color: white;
+  
  position:relative;
 
  &:hover ${Info}{
@@ -40,17 +42,24 @@ const Container = styled.div`
 const Circle = styled.div`
 width:200px;
 height:200px;
-border-radius:50%;
+border-radius:70%;
 background-color:white;
 position: absolute;
+display:flex;
+flex-wrap: wrap;
+
 
 `
 const Image = styled.img`
-height:60%;
-width:60%;
+height:90%;
+width:70%;
 z-index:2;
+border-radius:50%;
+box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 display: flex;
 justify-content: center;
+padding-left: 100px;
+
 
 
 `
@@ -64,6 +73,7 @@ align-items: center;
 text-align: center;
 z-index:100;
 font-weight:bold;
+
 
 `
 
