@@ -19,3 +19,53 @@ h2 {
 .rating span {
   margin: 0.1rem;
 }
+.container {
+  width: 100%;
+  color:white;
+
+}
+.mr-auto{
+  float:right;
+  position:relative;
+  margin-left: 300px;
+  color:black;
+  font-weight: 800 !important;
+}
+.kabir{
+  position:relative;
+  top:10px;
+  color:rgb(65, 67, 170);
+  font-family: 'Henny Penny', cursive;
+  font-size: 30px;
+}
+.kabir:hover{
+  color:white;
+  transform: scale(10px);
+}
+.kabirna{
+  color:rgb(65, 67, 170);
+  font-family: 'Henny Penny', cursive;
+  font-weight: bold;
+  font-size: 15px;
+  opacity: 1;
+}
+.kabirna:hover{
+  color:white;
+  transform: scale(10px);
+}
+.form1{
+  display: flex;
+  justify-content:center;
+  position: relative;
+  width:50%;
+  left:150px;
+  border-radius: 50%;
+}
+.form2{
+  border:4px solid white;
+  background-color:rgb(65, 67, 170);
+}
+.titre{
+  color:black;
+  font-weight: 600;
+}

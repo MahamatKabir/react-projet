@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/products',productRoutes)
 app.use('/api/users',userRoutes)
-app.use('/api/order',orderRoutes)
+app.use('/api/orders',orderRoutes)
 app.use('/api/upload', uploadRoutes)
 
 app.get('/api/config/paypal', (req, res) =>
@@ -47,9 +47,9 @@ app.get('/api/products/:id', (req, res) => {
 //error resolver 
 
 app.use(notFound)
-
+ 
 app.use(errorHandler)
-const PORT = process.env.PORT || 8000;   
+const PORT = process.env.PORT || 8000;      
 
 app.listen(PORT, console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`))
 

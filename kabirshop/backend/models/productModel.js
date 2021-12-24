@@ -31,9 +31,11 @@ const productSchema = mongoose.Schema({
         required: true
     },
     category: {
-        type:String,
-        required: true,
+        type:Array,
+        
     },
+    size: { type: Array },
+    color: { type: Array },
     description: { 
         type:String,
         required: true,
@@ -47,7 +49,7 @@ const productSchema = mongoose.Schema({
     numReviews: {
         type: Number,
         required: true,
-        default: 0
+        default: 2
     },
     price: {
         type:Number,

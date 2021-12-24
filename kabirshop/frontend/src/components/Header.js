@@ -5,6 +5,7 @@ import {LinkContainer} from 'react-router-bootstrap'
 import {Navbar,Nav,Container,NavDropdown} from 'react-bootstrap'
 import {logout} from '../actions/userActions'
 import SearchBox from './SearchBox'
+import "../index.css"
 
 
 const Header = () => {
@@ -18,18 +19,19 @@ const Header = () => {
   }
     return (
         <header>
-    <Navbar bg="dark" variant='dark' expand='lg' collapseOnSelect>
-        <Container>
+    <Navbar bg="black"  variant='dark' expand='lg' collapseOnSelect>
+        <Container className="container">
         <LinkContainer to='/'>
-        <Navbar.Brand>KabirShop</Navbar.Brand>
+        <Navbar.Brand ><p className="kabir">KabirShop</p></Navbar.Brand>
         </LinkContainer>
     <Navbar.Toggle aria-controls='basic-navbar-nav' />
+    
     <Navbar.Collapse id='basic-navbar-nav'>
-      <Route render={({history}) => <SearchBox history={history} />} />
-      <Nav className="ml-auto ">
+    <Route render={({history}) => <SearchBox history={history}  />} />
+      <Nav className="mr-auto ">
          <LinkContainer to='/cart'>
              <Nav.Link>
-                 <i className="fa fa-shopping-cart"></i> Cart
+                 <i className="fa fa-shopping-cart"></i><a className="kabirna">Cart</a>
             </Nav.Link>
          </LinkContainer>
         
@@ -45,7 +47,7 @@ const Header = () => {
               ) : (
                 <LinkContainer to='/login'>
                   <Nav.Link>
-                    <i className='fas fa-user'></i> Sign In
+                    <i className='fas fa-user'></i> <a className="kabirna">Sign In</a>
                   </Nav.Link>
                 </LinkContainer>
               )}

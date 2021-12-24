@@ -49,29 +49,39 @@ flex:1;
 `
 const Image = styled.img`
 height:80%;
+border-radius:50%;
 
 
 `
 const InfoContainer = styled.div`
+position:relative;
+right:200px;
 padding:50px;
 flex:1;
 `
 const Title = styled.h1`
 font-size:70px;
+color:black;
 
 `
 const Desc = styled.div`
-margin: 50px 0px;
+margin: 20px 0px;
 font-size:20px;
 font-weight: 500;
 letter-spacing: 3px;
+color:black;
+position:relative;
+right:110px;
 
 `
 const Button = styled.button`
 padding:10px;
 font-size:20px;
-background-color:transparent;
+justify-content:center;
+text-align: center;
+background-color:rgb(65, 67, 170);;
 cursor:pointer;
+color:white;
 
 `
 
