@@ -37,14 +37,7 @@ app.get('/api/config/paypal', (req, res) =>
 const __dirname = path.resolve()
 app.use('/uploads', express.static(path.join(__dirname, '/uploads')))
 
-/*app.get('/api/products', (req, res) => {
-    res.json(products)
-})
-app.get('/api/products/:id', (req, res) => {
-    const product = products.find((p) => p._id === req.params.id)
-    res.json(product)
-})*/
-//error resolver 
+
 
 app.use(notFound)
  

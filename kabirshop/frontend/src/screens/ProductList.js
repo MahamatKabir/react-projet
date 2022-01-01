@@ -1,13 +1,14 @@
+import {useSelector} from 'react-redux'
 import styled from "styled-components";
 import Header from "../components/Header";
 import {Row,Col } from 'react-bootstrap'
-import Products from '../components/Products'
+import Products from '../components/Products';
+import Product from '../components/Product';
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 //import Announcement from "../components/Announcement";
 //import Products from "./Products";
 //import Newsletter from "../components/Newsletter";
-
 import { mobile } from "../responsive";
 import { useLocation}  from "react-router";
 import { useState } from "react";
@@ -56,6 +57,8 @@ const ProductList = () => {
       [e.target.name]: value,
     });
   };
+  const productList = useSelector((state) => state.productList)
+  const {loading,error,products} = productList
 
   return (
     <Container>
@@ -91,7 +94,16 @@ const ProductList = () => {
           </Select>
         </Filter>
       </FilterContainer>
-      <Products cat={cat} filters={filters} sort={sort} />
+      {loading ? <Loader/> : error ? <Message variant='danger'>{Error}</Message> :
+    <Row>
+        {products.map((product,cat) => (
+            <Col key={product._id} sm={12} md={6} lg={4} xl={3} >
+                <Product product={product}  cat={cat} filters={filters} sort={sort}/>
+            </Col>
+        ))}
+    </Row>
+    
+        }
      
     </Container>
   );
