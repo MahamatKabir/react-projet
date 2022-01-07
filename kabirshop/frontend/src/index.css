@@ -69,3 +69,13 @@ h2 {
   color:black;
   font-weight: 600;
 }
+.formcontainer{
+  background-color: rgb(26, 71, 155);
+}
+.merhaba{ 
+  text-align: center;
+}
+.giris{
+  display: flex;
+  justify-content:space-between;
+}

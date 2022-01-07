@@ -26,12 +26,12 @@ const PaymentScreen = ({ history }) => {
   return (
     <FormContainer>
       <CheckoutSteps step1 step2 step3 />
-      <h1>Payment Method</h1>
+      <h1>Ödeme Metodu</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group>
-          <Form.Label as='legend'>Select Method</Form.Label>
+          <Form.Label as='legend'>Metod Seç</Form.Label>
           <Col>
-             {/*<Form.Check style={{color: 'black'}}
+             <Form.Check style={{color: 'black'}}
               type='radio'
               label='PayPal or Credit Card'
               id='PayPal'
@@ -39,7 +39,7 @@ const PaymentScreen = ({ history }) => {
               value='PayPal'
               checked
               onChange={(e) => setPaymentMethod(e.target.value)}
-           ></Form.Check>*/}
+           ></Form.Check>
             <Form.Check style={{color: 'black'}}
               type='radio'
               label='Stripe or Credit Card'

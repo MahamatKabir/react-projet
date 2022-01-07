@@ -6,6 +6,7 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 import FormContainer from '../components/FormContainer'
 import { login } from '../actions/userActions'
+import '../index.css'
 
 const LoginScreen = ({ location, history }) => {
   const [email, setEmail] = useState('')
@@ -30,33 +31,35 @@ const LoginScreen = ({ location, history }) => {
   }
 
   return (
-    <FormContainer>
-      <h1>Sign In</h1>
+    <FormContainer className="formcontainer">
+      <h1 className="merhaba">Merhaba</h1>
+      <h6>KabirShop'a giriş yap veya hesap oluştur, indirimleri kaçirma!</h6>
+      <h1>Giriş Yap</h1>
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='email'>
-          <Form.Label>Email Address</Form.Label>
+          <Form.Label>E-Posta</Form.Label>
           <Form.Control
             type='email'
-            placeholder='Enter email'
+            placeholder='E-Posta'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
         <Form.Group controlId='password'>
-          <Form.Label>Password</Form.Label>
+          <Form.Label>Şifre</Form.Label>
           <Form.Control
             type='password'
-            placeholder='Enter password'
+            placeholder='Şifre'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
         <Button type='submit' variant='primary'>
-          Sign In
+          GİRİŞ YAP
         </Button>
       </Form>
 
@@ -64,7 +67,7 @@ const LoginScreen = ({ location, history }) => {
         <Col>
           New Customer?{' '}
           <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
-            Register
+            Üye Ol 
           </Link>
         </Col>
       </Row>

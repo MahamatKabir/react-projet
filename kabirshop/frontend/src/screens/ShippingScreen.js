@@ -25,13 +25,13 @@ const ShippingScreen = ({ history }) => {
   return (
     <FormContainer>
       <CheckoutSteps step1 step2 />
-      <h1>Shipping</h1>
+      <h1>Teslimat Adres</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='address'>
           <Form.Label>Address</Form.Label>
           <Form.Control
             type='text'
-            placeholder='Enter address'
+            placeholder='Adresiniz giriniz'
             value={address}
             required
             onChange={(e) => setAddress(e.target.value)}
@@ -39,10 +39,10 @@ const ShippingScreen = ({ history }) => {
         </Form.Group>
 
         <Form.Group controlId='city'>
-          <Form.Label>City</Form.Label>
+          <Form.Label>ülke</Form.Label>
           <Form.Control
             type='text'
-            placeholder='Enter city'
+            placeholder='ülkeniz giriniz'
             value={city}
             required
             onChange={(e) => setCity(e.target.value)}
@@ -53,7 +53,7 @@ const ShippingScreen = ({ history }) => {
           <Form.Label>Postal Code</Form.Label>
           <Form.Control
             type='text'
-            placeholder='Enter postal code'
+            placeholder='posta codunuz giriniz '
             value={postalCode}
             required
             onChange={(e) => setPostalCode(e.target.value)}
@@ -64,7 +64,7 @@ const ShippingScreen = ({ history }) => {
           <Form.Label>Country</Form.Label>
           <Form.Control
             type='text'
-            placeholder='Enter country'
+            placeholder='ülkeniz giriniz'
             value={country}
             required
             onChange={(e) => setCountry(e.target.value)}
@@ -72,7 +72,7 @@ const ShippingScreen = ({ history }) => {
         </Form.Group>
 
         <Button type='submit' variant='primary'>
-          Continue
+          Devam
         </Button>
       </Form>
     </FormContainer>

@@ -6,6 +6,7 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 import FormContainer from '../components/FormContainer'
 import { register } from '../actions/userActions'
+import '../index.css'
 
 const RegisterScreen = ({ location, history }) => {
   const [name, setName] = useState('')
@@ -38,7 +39,9 @@ const RegisterScreen = ({ location, history }) => {
 
   return (
     <FormContainer>
-      <h1>Sign Up</h1>
+      <h1 className="merhaba">Merhaba</h1>
+       <h6>KabirShop'a giriş yap veya hesap oluştur, indirimleri kaçirma!</h6>
+      <h1>Üye Ol</h1>
       {message && <Message variant='danger'>{message}</Message>}
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
@@ -47,7 +50,7 @@ const RegisterScreen = ({ location, history }) => {
           <Form.Label>Name</Form.Label>
           <Form.Control
             type='name'
-            placeholder='Enter name'
+            placeholder='Adiniz giriniz'
             value={name}
             onChange={(e) => setName(e.target.value)}
           ></Form.Control>
@@ -57,7 +60,7 @@ const RegisterScreen = ({ location, history }) => {
           <Form.Label>Email Address</Form.Label>
           <Form.Control
             type='email'
-            placeholder='Enter email'
+            placeholder='E-Posta giriniz'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           ></Form.Control>
@@ -84,7 +87,7 @@ const RegisterScreen = ({ location, history }) => {
         </Form.Group>
 
         <Button type='submit' variant='primary'>
-          Register
+          Üye Ol
         </Button>
       </Form>
 
@@ -92,7 +95,7 @@ const RegisterScreen = ({ location, history }) => {
         <Col>
           Have an Account?{' '}
           <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>
-            Login
+            Giris Yap
           </Link>
         </Col>
       </Row>

@@ -31,7 +31,7 @@ const Header = () => {
       <Nav className="mr-auto ">
          <LinkContainer to='/cart'>
              <Nav.Link>
-                 <i className="fa fa-shopping-cart"></i><a className="kabirna">Cart</a>
+                 <i className="fa fa-shopping-cart"></i><a className="kabirna">Sepetim</a>
             </Nav.Link>
          </LinkContainer>
         
@@ -41,26 +41,26 @@ const Header = () => {
                     <NavDropdown.Item>Profile</NavDropdown.Item>
                   </LinkContainer>
                   <NavDropdown.Item onClick={logoutHandler}>
-                    Logout
+                    Çikiş
                   </NavDropdown.Item>
                 </NavDropdown>
               ) : (
                 <LinkContainer to='/login'>
                   <Nav.Link>
-                    <i className='fas fa-user'></i> <a className="kabirna">Sign In</a>
+                    <i className='fas fa-user'></i> <a className="kabirna">Giriş Yap</a>
                   </Nav.Link>
                 </LinkContainer>
               )}
               {userInfo && userInfo.isAdmin && (
                 <NavDropdown title='Admin' id='adminmenu'>
                   <LinkContainer to='/admin/userlist'>
-                    <NavDropdown.Item>Users</NavDropdown.Item>
+                    <NavDropdown.Item>Kullanicilar</NavDropdown.Item>
                   </LinkContainer>
                   <LinkContainer to='/admin/productlist'>
-                    <NavDropdown.Item>Products</NavDropdown.Item>
+                    <NavDropdown.Item>Ürünlar</NavDropdown.Item>
                   </LinkContainer>
                   <LinkContainer to='/admin/orderlist'>
-                    <NavDropdown.Item>Orders</NavDropdown.Item>
+                    <NavDropdown.Item>Siparişler</NavDropdown.Item>
                   </LinkContainer>
                 </NavDropdown>
               )}
