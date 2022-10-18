@@ -1,0 +1,162 @@
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+// Create scss variable 
+$white : #fff;
+$black: #000;
+$bg-color: #1E1E1E;
+
+//font weight 
+$sm:100px;
+$md:300px;
+$lg:400px;
+$xl:700px;
+$xxl: 1400px;
+
+//fontsize
+$fs:12px;
+$fd:14px;
+$fg:36px;
+
+
+$font-family: "Inter",
+sans-serif;
+
+body {
+    position: relative;
+}
+
+.navbar {
+    position: relative;
+    background-color: $bg-color;
+    color: $white;
+    border-top: 10px solid #D20000;
+
+    .container-fluid {
+        display: flex;
+        justify-content: space-between;
+    }
+    .nav-link {
+        color: $white;
+    }
+}
+.nav {
+    .nav-link {
+        color: black;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: $lg;
+        font-size: $fd;
+        line-height: 22px;
+        @media only screen and (max-width: 717px) {
+            font-size: $fs;
+            line-height: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+}
+.card-title {
+    width: 309px;
+    height: 160px;
+    /* News Headline/Headline XL */
+    font-family: 'Feature Text App';
+    font-style: normal;
+    font-weight: $xl;
+    font-size: $fg;
+    line-height: 40px;
+    /* or 111% */
+    letter-spacing: -0.01em;
+    color: $bg-color;
+    /* Inside auto layout */
+    flex-grow: 0;
+}
+
+.card-text {
+    width: 309px;
+    height: 72px;
+    font-family: 'Tiempos Text';
+    font-style: normal;
+    font-weight: $lg;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.005em;
+    color: $bg-color;
+}
+.card-body {
+    .card-title {
+        width: 300px;
+        height: 48px;
+        font-family: 'Feature Text App';
+        font-style: normal;
+        font-weight: $xl;
+        font-size: 20px;
+        line-height: 24px;
+        color: $bg-color;
+        align-self: stretch;
+        flex-grow: 0;
+    }
+    .card-text {
+        width: 230px;
+        height: 44px;
+        /* Body Serif/Sm */
+        font-family: 'Tiempos Text';
+        font-style: normal;
+        font-weight: $lg;
+        font-size: 14px;
+        line-height: 22px;
+        color: $bg-color;
+    }
+}
+.navbar-brand {
+    h1 {
+        position: absolute;
+        width: 154px;
+        height: 40px;
+        left: calc(30% - 150px/2);
+        top: 10px;
+        font-family: 'Feature Text App';
+        font-style: normal;
+        font-weight: $lg;
+        font-size: 40px;
+        line-height: 100%;
+        /* identical to box height, or 40px */
+        text-align: center;
+        letter-spacing: -0.02em;
+        font-feature-settings: 'calt'off;
+
+        color: $white;
+
+        @media only screen and (max-width: 717px) {
+           display: none;
+        }
+    }
+    h6 {
+        position: absolute;
+        color: $white;
+        width: 2.82px;
+        height: 2.23px;
+        left: calc(20% - 2.82px/2 - 40.72px);
+        top: 1px;
+
+        @media only screen and (max-width: 717px) {
+            text-align: center;
+            font-family: 'Feature Text App';
+            font-style: normal;
+            font-weight: $lg;
+            font-size: 40px;
+            line-height: 100%;
+            position: absolute;
+            left: -150px;
+        }
+    }
+}
+
+.col-sm-9 {
+    .col-12 {
+        @media only screen and (max-width: 717px) {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+}
