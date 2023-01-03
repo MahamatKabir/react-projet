@@ -4,11 +4,12 @@ import Product from '../components/Product'
 import {Row,Col} from 'react-bootstrap'
 
 const HomeScreen = () => {
+  
   return (
     <div>
         <Row>
         {products.map(product =>(
-            <Col sm={12} md={6} lg={4} xl={3}>
+            <Col sm={10} md={6} lg={4} xl={3}>
             <Product product={product} />
             </Col>
         ))}
